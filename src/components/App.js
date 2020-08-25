@@ -4,8 +4,7 @@ import Exercises from '../pages/Exercises'
 import ExerciseNew from '../pages/ExerciseNew'
 import NotFound from '../pages/NotFound'
 
-function App() {
-  return (
+const App = () => (
     <BrowserRouter>
       <Switch>
         <Route exact path="/exercise" component={Exercises} />
@@ -13,7 +12,6 @@ function App() {
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
-  )
-}
+)
 
 export default App
