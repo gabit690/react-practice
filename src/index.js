@@ -1,5 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Contador from './components/Contador'
+import Clock from './components/Clock'
 
-ReactDOM.render(<Contador />, document.getElementById('root'))
+ReactDOM.render(<Clock />, document.getElementById('root'));
