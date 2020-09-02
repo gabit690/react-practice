@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Clock from './components/Clock'
+import NumberList from './components/NumberList'
 
-ReactDOM.render(<Clock />, document.getElementById('root'));
+const numbers = [1, 2, 3, 4, 5]
+
+ReactDOM.render(<NumberList numbers={numbers} />, document.getElementById('root'));
