@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Reservation from './components/Reservation'
+import Calculator from './components/Calculator'
 
-ReactDOM.render(<Reservation />, document.getElementById('root'));
+ReactDOM.render(<Calculator />, document.getElementById('root'));
