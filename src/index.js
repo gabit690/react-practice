@@ -1,7 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import NumberList from './components/NumberList'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Reservation from './components/Reservation'
 
-const numbers = [1, 2, 3, 4, 5]
-
-ReactDOM.render(<NumberList numbers={numbers} />, document.getElementById('root'));
+ReactDOM.render(<Reservation />, document.getElementById('root'));
