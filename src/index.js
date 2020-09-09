@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Calculator from './components/Calculator'
+import SignUpDialog from './components/SignUpDialog'
 
-ReactDOM.render(<Calculator />, document.getElementById('root'));
+ReactDOM.render(<SignUpDialog />, document.getElementById('root'));
