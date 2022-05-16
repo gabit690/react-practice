@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SignUpDialog from './components/SignUpDialog'
+import Focusing from './components/Focusing';
 
-ReactDOM.render(<SignUpDialog />, document.getElementById('root'));
+ReactDOM.render(<Focusing />, document.getElementById('root'));
