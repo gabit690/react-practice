@@ -1,5 +1,4 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import Focusing from './components/Focusing';
+import Ref from './components/Ref';
 
-ReactDOM.render(<Focusing />, document.getElementById('root'));
+ReactDOM.render(Ref, document.getElementById('root'));
