@@ -1,4 +1,5 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Ref from './components/Ref';
+import InnerComponent from './components/HOC';
 
-ReactDOM.render(Ref, document.getElementById('root'));
+ReactDOM.render(<InnerComponent/>, document.getElementById('root'));
