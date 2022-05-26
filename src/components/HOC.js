@@ -1,20 +1,10 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
 
-class InnerComponent extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      message: `I'm ${props.author} and we are in the year ${props.year}`
-    };
-  }
-
-  render() {
-    return <p>{this.state.message}</p>;
-  }
+const InnerComponent = ({ author, year }) => {
+  return <p>{`I'm ${author} and we are in the year ${year}`}</p>;
 }
 
-function higherOrderComponent(WrappedComponent) {
+const higherOrderComponent = (WrappedComponent) => {
   return (data) => class HOC extends Component {
     render() {
       HOC.displayName = `WithSubscription(${WrappedComponent.displayName || WrappedComponent.name || 'Component'})`;

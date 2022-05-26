@@ -1,44 +1,31 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class FlavorForm extends Component {
+const FlavorForm = () => {
+  const [value, setValue] = useState('lime');
   
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: 'lime'
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  
-  handleChange(event) {
-    this.setState({
-      value: event.target.value
-    })
+  function handleChange(event) {
+    setValue(event.target.value);
   }
 
-  handleSubmit(event) {
-    alert('Your favorite flavor is: ' + this.state.value);
+  function handleSubmit(event) {
+    alert('Your favorite flavor is: ' + value);
     event.preventDefault();
   }
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Pick your favorite flavor:
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value='grapefruit'>Grapefruit</option>
-            <option value='lime'>Lime</option>
-            <option value='coconut'>Coconut</option>
-            <option value='mango'>Mango</option>
-          </select>
-        </label>
-        <input type='submit' value='Send' />
-      </form>
-    );
-  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Pick your favorite flavor:
+        <select value={value} onChange={handleChange}>
+          <option value='grapefruit'>Grapefruit</option>
+          <option value='lime'>Lime</option>
+          <option value='coconut'>Coconut</option>
+          <option value='mango'>Mango</option>
+        </select>
+      </label>
+      <input type='submit' value='Send' />
+    </form>
+  );
 }
 
 export default FlavorForm;

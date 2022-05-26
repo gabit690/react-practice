@@ -1,16 +1,19 @@
 import React from 'react'
 
-function NumberList(props) {
+const NumberList = ({ numbers }) => {
     
-    const numbers = props.numbers;
-    
-    return(
-        <ul>
-            {numbers.map((number) => 
-                <li number={number.toString()}> {number} </li>
-            )}
-        </ul>
-    )
+  return(
+    <ul>
+      {numbers.map((number, index) => 
+        <li 
+          key={index} 
+          number={number.toString()}
+        > 
+          {number}
+        </li>
+      )}
+    </ul>
+  );
 }
 
-export default NumberList
+export default NumberList;

@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const NameContext = React.createContext('pepe');
 NameContext.displayName = "CoolNameShowed";
 
-class App extends Component {
-  render() {
-    return (
-      <NameContext.Provider value='pipo'>
-        <Father></Father>
-      </NameContext.Provider>
-    );
-  }
+const App = () => {
+  return (
+    <NameContext.Provider value='pipo'>
+      <Father></Father>
+    </NameContext.Provider>
+  );
 }
 
-function Father() {
+const Father = () => {
   return (
     <>
       <h1>I'm father.</h1>
@@ -22,7 +20,7 @@ function Father() {
   );
 }
 
-function Son() {
+const Son = () => {
   return (
     <NameContext.Consumer>
       {value => <p>My name is {value}</p>}

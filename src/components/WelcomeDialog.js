@@ -1,7 +1,7 @@
 import React from 'react';
 import Dialog from './Dialog';
 
-function WelcomeDialog() {
+const WelcomeDialog = () => {
   return (
     <Dialog 
       title='Welcome'

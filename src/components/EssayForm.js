@@ -1,38 +1,32 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class EssayForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: 'Please write an essay about your favorite DOM element.'
-    };
+const EssayForm = () => {
+  const [value, setValue] = useState('');
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-
+  function handleChange(event) {
+    setValue(event.target.value);
   }
 
-  handleChange(event) {
-    this.setState({
-      value: event.target.value
-    });
-  }
-
-  handleSubmit(event) {
-    alert('An essay was submitted: ' + this.state.value);
+  function handleSubmit(event) {
+    alert('An essay was submitted: ' + value);
     event.preventDefault();
   }
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-        <textarea value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type='submit' value='Send' />
-      </form>
-    );
-  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+      <textarea 
+        value={value} 
+        onChange={handleChange} 
+        placeholder="Please write an essay about your favorite DOM element."
+      />
+      </label>
+      <input 
+        type='submit' 
+        value='Send'
+      />
+    </form>
+  );
 }
 
 export default EssayForm;

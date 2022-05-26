@@ -1,18 +1,18 @@
 import React from 'react';
 import FancyBorder from './FancyBorder';
 
-import './styles/Dialog.css';
+import '../styles/Dialog.css';
 
-function Dialog(props) {
+const Dialog = ({ title, message, children}) => {
   return (
     <FancyBorder color='blue'>
       <h1 className='Dialog-title'>
-        {props.title}
+        {title}
       </h1>
       <p className='Dialog-message'>
-        {props.message}
+        {message}
       </p>
-      {props.children}
+      {children}
     </FancyBorder>
   );
 }
