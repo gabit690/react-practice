@@ -1,49 +1,46 @@
-import React, { Component } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
-class Focusing extends Component {
+const Focusing = () => {
+  const [text, setText] = useState('');
+  const inputElement = React.createRef();
+  const isInitialMount = useRef(true);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      inputText: 'Change this field'
-    };
-    this.inputElement = React.createRef();
-    this.handleChange = this.handleChange.bind(this);
+  
+  useEffect(() => {
+    console.log("Focusing MOUNTED");
+  }, [])
+  
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+    } else {
+      console.log("Focusing UPDATED");
+    }
+  });
+
+  function handleChange(value) {
+    setText(value);
   }
 
-  componentDidMount() {
-    console.log(this.inputElement);
+  function showBox() {
+    alert(text);
+    inputElement.current.focus();
   }
 
-  componentDidUpdate() {
-    console.log("Focusing UPDATED");
-  }
-
-  handleChange(value) {
-    console.log(value);
-    this.setState({inputText: value});
-  }
-
-  showBox() {
-    alert(this.state.inputText);
-    this.inputElement.current.focus();
-  }
-
-  render() {
-    return (
-      <>
-        <h1>Focusing</h1>
-        <button onClick={this.showBox.bind(this)}>Show box</button>
-        <label htmlFor="name"></label>
-        <input 
-          type="text" 
-          defaultValue={this.state.inputText}
-          ref={this.inputElement}
-          onChange={(ev) => this.handleChange(ev.target.value)}
-        />
-      </>
-    );
-  }
+  return (
+    <>
+      <h1>Focusing</h1>
+      <button onClick={showBox.bind(this)}>Show box</button>
+      <label htmlFor="name"></label>
+      <input 
+        type="text" 
+        defaultValue={text}
+        ref={inputElement}
+        onChange={(ev) => handleChange(ev.target.value)}
+        placeholder='Change this field'
+      />
+    </>
+  );
 }
 
 export default Focusing;

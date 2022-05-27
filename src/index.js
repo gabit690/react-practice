@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Human from './components/RenderProps';
+import Focusing from './components/Focusing';
 
-ReactDOM.render(<Human />, document.getElementById('root'));
+ReactDOM.render(<Focusing />, document.getElementById('root'));

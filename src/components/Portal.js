@@ -1,23 +1,16 @@
-import React, { Component } from "react";
+import { useEffect } from "react";
 import ReactDOM from "react-dom";
 
-export default class PortalContainer extends Component {
+const PortalContainer = (props) => {
+  const element = document.createElement('div');
+  const outsideContainer = document.getElementById(props.idContainer);
 
-  constructor(props) {
-    super(props);
-    this.element = document.createElement('div');
-    this.outsideContainer = document.getElementById(this.props.idContainer);
-  }
+  useEffect(() => {
+    outsideContainer.appendChild(element);
+    return () => outsideContainer.removeChild(element);
+  });
 
-  componentDidMount() {
-    this.outsideContainer.appendChild(this.element);
-  }
-
-  componentWillUnmount() {
-    this.outsideContainer.removeChild(this.element);
-  }
-
-  render () {
-    return ReactDOM.createPortal(this.props.children, this.element);
-  }
+  return ReactDOM.createPortal(props.children, element);
 }
+
+export default PortalContainer;
