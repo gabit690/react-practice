@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Focusing from './components/Focusing';
+import WelcomeDialog from './components/WelcomeDialog';
 
-ReactDOM.render(<Focusing />, document.getElementById('root'));
+ReactDOM.render(<WelcomeDialog />, document.getElementById('root'));

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Dialog from './Dialog';
+import Dialog from './Dialog/Dialog';
 
 const SignUpDialog = () => {
   const [username, setUsername] = useState('');
